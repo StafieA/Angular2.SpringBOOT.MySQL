@@ -1,4 +1,4 @@
-package entities;
+package Stafie.BackendShoppingApp.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
