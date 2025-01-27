@@ -3,6 +3,8 @@ package Stafie.BackendShoppingApp.entities;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -12,6 +14,8 @@ import java.util.Date;
 @Entity
 @Table(name="shopping")
 @Data
+@Getter
+@Setter
 public class Product {
 
     @Id
@@ -26,7 +30,7 @@ public class Product {
 
     @Column(name = "sku")
     private String sku;
-
+    @JsonProperty("name")
     @Column(name = "name")
     private String name;
 
@@ -52,4 +56,6 @@ public class Product {
     @Column(name = "last_updated")
     @UpdateTimestamp
     private Date lastUpdated;
+
+
 }

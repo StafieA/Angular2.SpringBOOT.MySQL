@@ -1,0 +1,6 @@
+Stafie\BackendShoppingApp\repositories\ProductCategoryRepository.class
+Stafie\BackendShoppingApp\BackendShoppingAppApplication.class
+Stafie\BackendShoppingApp\config\DataRestConfig.class
+Stafie\BackendShoppingApp\entities\ProductCategory.class
+Stafie\BackendShoppingApp\entities\Product.class
+Stafie\BackendShoppingApp\repositories\ProductRepository.class
