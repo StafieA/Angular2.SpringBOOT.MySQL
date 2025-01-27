@@ -1,0 +1,70 @@
+# Angular specific ignores
+AngularShoppingApp/dist
+AngularShoppingApp/tmp
+AngularShoppingApp/out-tsc
+AngularShoppingApp/bazel-out
+
+AngularShoppingApp/node_modules
+AngularShoppingApp/npm-debug.log
+AngularShoppingApp/yarn-error.log
+
+AngularShoppingApp/.idea/
+AngularShoppingApp/.project
+AngularShoppingApp/.classpath
+AngularShoppingApp/.c9/
+AngularShoppingApp/*.launch
+AngularShoppingApp/.settings/
+AngularShoppingApp/*.sublime-workspace
+
+AngularShoppingApp/.vscode/*
+!AngularShoppingApp/.vscode/settings.json
+!AngularShoppingApp/.vscode/tasks.json
+!AngularShoppingApp/.vscode/launch.json
+!AngularShoppingApp/.vscode/extensions.json
+AngularShoppingApp/.history/*
+
+AngularShoppingApp/.angular/cache
+AngularShoppingApp/.sass-cache/
+AngularShoppingApp/connect.lock
+AngularShoppingApp/coverage
+AngularShoppingApp/libpeerconnection.log
+AngularShoppingApp/testem.log
+AngularShoppingApp/typings
+
+# Spring Boot specific ignores
+SpringBootShoppingApp/HELP.md
+SpringBootShoppingApp/target/
+!SpringBootShoppingApp/.mvn/wrapper/maven-wrapper.jar
+!SpringBootShoppingApp/**/src/main/**/target/
+!SpringBootShoppingApp/**/src/test/**/target/
+
+SpringBootShoppingApp/.apt_generated
+SpringBootShoppingApp/.classpath
+SpringBootShoppingApp/.factorypath
+SpringBootShoppingApp/.project
+SpringBootShoppingApp/.settings
+SpringBootShoppingApp/.springBeans
+SpringBootShoppingApp/.sts4-cache
+
+# IntelliJ IDEA specific ignores
+SpringBootShoppingApp/.idea
+SpringBootShoppingApp/*.iws
+SpringBootShoppingApp/*.iml
+SpringBootShoppingApp/*.ipr
+
+# NetBeans specific ignores
+SpringBootShoppingApp/nbproject/private/
+SpringBootShoppingApp/nbbuild/
+SpringBootShoppingApp/dist/
+SpringBootShoppingApp/nbdist/
+SpringBootShoppingApp/.nb-gradle/
+SpringBootShoppingApp/build/
+!SpringBootShoppingApp/**/src/main/**/build/
+!SpringBootShoppingApp/**/src/test/**/build/
+
+# VS Code specific ignores
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
