@@ -7,13 +7,14 @@ import { map, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProductService {
-  private baseUrl = 'http://localhost:8081/api/products?size=100';
+  private baseUrl = 'http://localhost:8081/api/products';
 
   constructor(private httpClient: HttpClient) {}
 
-  getProductList(): Observable<Product[]> {
+  getProductList(theCategoryId: number): Observable<Product[]> {
+    const categoryUrl = `${this.baseUrl}/${theCategoryId}`;
     return this.httpClient
-      .get<GetResponse>(this.baseUrl)
+      .get<GetResponse>(categoryUrl)
       .pipe(map((response) => response._embedded.products));
   }
 }
