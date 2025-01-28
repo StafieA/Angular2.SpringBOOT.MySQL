@@ -20,7 +20,9 @@ export class ProductListComponent implements OnInit {
     this.productService.getProductList().subscribe(
       (data) => {
         this.productList = data;
-        console.log('Data received: ' + JSON.stringify(this.productList));
+        console.log(
+          'Data received: ' + JSON.stringify(this.productList[0].imageUrl)
+        );
       },
       (error) => {
         console.error('Error fetching product list:', error);
