@@ -10,7 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductListComponent implements OnInit {
   productList: Product[] = [];
-  currentCategoryId: number = 1;
+  currentCategoryId?: number;
+  searchMode?: boolean;
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute
@@ -20,6 +21,22 @@ export class ProductListComponent implements OnInit {
   }
 
   listProducts() {
+    this.searchMode = this.route.snapshot.paramMap.has('keyword');
+    if (this.searchMode) {
+      this.handleSearchProducts();
+    } else {
+      this.handleListProducts();
+    }
+  }
+
+  handleSearchProducts() {
+    const theKeyword = this.route.snapshot.paramMap.get('keyword');
+    this.productService.searchProductByKeyword(theKeyword).subscribe((data) => {
+      this.productList = data;
+    });
+  }
+
+  handleListProducts() {
     this.currentCategoryId = +(this.route.snapshot.paramMap.get('id') ?? 1);
 
     this.productService.getProductList(this.currentCategoryId).subscribe(
