@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class SearchComponent implements OnInit {
   constructor(private router: Router) {}
   ngOnInit() {
-    this.searchIt('pula');
+    // this.searchIt();
   }
 
   searchIt(value: string) {

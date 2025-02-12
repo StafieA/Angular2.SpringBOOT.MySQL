@@ -10,6 +10,13 @@
             <button class="btn btn-primary">Add to cart</button>
           </div>
         </div>
+        <div
+          *ngIf="productList?.length == 0"
+          class="alert alert-warning col-md-12"
+          role="alert"
+        >
+          <h3>No products found ... 🤐</h3>
+        </div>
       </div>
     </div>
   </div>
