@@ -25,6 +25,7 @@ const routes: Routes = [
     ProductListComponent,
     ProductCategoryMenuComponent,
     SearchComponent,
+    ProductDetailsComponent,
   ],
   imports: [RouterModule.forRoot(routes), BrowserModule, HttpClientModule],
   providers: [ProductService],

@@ -5,8 +5,6 @@ import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-details',
-  standalone: true,
-  imports: [],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css',
 })
