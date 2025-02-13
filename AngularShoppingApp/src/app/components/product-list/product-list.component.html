@@ -11,7 +11,9 @@
               <h1>{{ product.name }}</h1>
             </a>
             <div class="price">{{ product.unitPrice | currency : "USD" }}</div>
-            <button class="btn btn-primary">Add to cart</button>
+            <button class="btn btn-primary btn-sm" (click)="addToCart(product)">
+              Add to cart
+            </button>
           </div>
         </div>
         <div

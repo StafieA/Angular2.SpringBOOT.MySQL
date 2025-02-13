@@ -30,6 +30,8 @@ export class ProductListComponent implements OnInit {
     this.route.paramMap.subscribe(() => this.listProducts());
   }
 
+  addToCart(product: Product) {}
+
   updatePageSize(pageSize: String) {
     this.thePageSize = Number(pageSize);
     this.thePageNumber = 1;
