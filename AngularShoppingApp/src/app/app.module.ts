@@ -11,10 +11,11 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
+  { path: 'products', component: ProductListComponent },
   { path: 'category', component: ProductListComponent },
   { path: 'category/:id', component: ProductListComponent },
   { path: 'search/:keyword', component: ProductListComponent },
-  { path: 'products', component: ProductListComponent },
+
   { path: 'products/:id', component: ProductDetailsComponent },
   { path: '', redirectTo: '/products', pathMatch: 'full' },
   { path: '**', redirectTo: '/products', pathMatch: 'full' },

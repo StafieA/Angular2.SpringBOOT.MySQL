@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../services/product.service';
+import {
+  GetResponseProducts,
+  ProductService,
+} from '../../services/product.service';
 import { Product } from '../../common/product';
 import { ActivatedRoute } from '@angular/router';
 
@@ -14,7 +17,7 @@ export class ProductListComponent implements OnInit {
   previousCategoryId?: number;
   searchMode?: boolean;
   thePageNumber: number = 1;
-  thePageSize: number = 10;
+  thePageSize: number = 5;
   totalElements: number = 0;
 
   constructor(
@@ -72,7 +75,7 @@ export class ProductListComponent implements OnInit {
   }
 
   processResult() {
-    return (data) => {
+    return (data: GetResponseProducts) => {
       this.productList = data._embedded.products;
       this.thePageNumber = data.page.number + 1;
       this.thePageSize = data.page.size;
