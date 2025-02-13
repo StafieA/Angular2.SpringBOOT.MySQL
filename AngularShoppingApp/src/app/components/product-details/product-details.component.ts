@@ -9,7 +9,7 @@ import { ProductService } from '../../services/product.service';
   styleUrl: './product-details.component.css',
 })
 export class ProductDetailsComponent implements OnInit {
-  product!: Product;
+  product: Product = new Product();
 
   constructor(
     private productsService: ProductService,
