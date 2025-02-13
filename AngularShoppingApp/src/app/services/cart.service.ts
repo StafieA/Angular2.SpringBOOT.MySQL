@@ -22,5 +22,18 @@ export class CartService {
     } else {
       this.cartItems.push(theCartItem);
     }
+    this.computeCartTotals();
+  }
+  computeCartTotals() {
+    let totalQuantityValue = 0;
+    let totalPriceValue = 0;
+
+    this.cartItems.forEach((item) => {
+      totalQuantityValue += item.quantity;
+      totalPriceValue += item.quantity * item.unitPrice;
+    });
+
+    this.totalPrice.next(totalPriceValue);
+    this.totalQuantity.next(totalQuantityValue);
   }
 }
