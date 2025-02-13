@@ -63,33 +63,29 @@ export class ProductListComponent implements OnInit {
   }
 
   handleListProducts() {
-    this.currentCategoryId = +(this.route.snapshot.paramMap.get('id') ?? 1);
+    const hasCategoryId = this.route.snapshot.paramMap.has('id');
+    this.currentCategoryId = hasCategoryId
+      ? +(this.route.snapshot.paramMap.get('id') ?? 1)
+      : 0;
 
     if (this.previousCategoryId != this.currentCategoryId) {
       this.thePageNumber = 1;
     }
 
     this.previousCategoryId = this.currentCategoryId;
-
-    this.productService
-      .getProductListPaginate(
-        this.thePageNumber - 1,
-        this.thePageSize,
-        this.currentCategoryId
-      )
-      .subscribe(this.processResult());
-
-    // this.productService.getProductList(this.currentCategoryId).subscribe(
-    //   (data) => {
-    //     this.productList = data;
-    //     console.log(
-    //       'Data received: ' + JSON.stringify(this.productList[0].imageUrl)
-    //     );
-    //   },
-    //   (error) => {
-    //     console.error('Error fetching product list:', error);
-    //   }
-    // );
+    if (this.currentCategoryId === 0) {
+      this.productService
+        .getAllProductsPaginate(this.thePageNumber - 1, this.thePageSize)
+        .subscribe(this.processResult());
+    } else {
+      this.productService
+        .getProductListPaginate(
+          this.thePageNumber - 1,
+          this.thePageSize,
+          this.currentCategoryId
+        )
+        .subscribe(this.processResult());
+    }
   }
 
   processResult() {
