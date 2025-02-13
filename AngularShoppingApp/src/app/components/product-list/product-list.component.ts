@@ -28,6 +28,12 @@ export class ProductListComponent implements OnInit {
     this.route.paramMap.subscribe(() => this.listProducts());
   }
 
+  updatePageSize(pageSize: String) {
+    this.thePageSize = Number(pageSize);
+    this.thePageNumber = 1;
+    this.listProducts();
+  }
+
   listProducts() {
     this.searchMode = this.route.snapshot.paramMap.has('keyword');
     if (this.searchMode) {
