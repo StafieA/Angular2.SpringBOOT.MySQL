@@ -18,7 +18,10 @@
               <div class="d-flex align-items-center justify-content-start">
                 <label class="me-2">Quantity:</label>
 
-                <button class="btn btn-primary btn-sm">
+                <button
+                  (click)="incrementQuantity(tempCartItem)"
+                  class="btn btn-primary btn-sm"
+                >
                   <i class="fas fa-plus"></i>
                 </button>
 

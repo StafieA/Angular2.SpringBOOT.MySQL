@@ -39,4 +39,8 @@ export class CartDetailsComponent implements OnInit, OnDestroy {
     );
     this.cartServ.computeCartTotals();
   }
+
+  incrementQuantity(tempCartItem: CartItem) {
+    this.cartServ.addToCart(tempCartItem);
+  }
 }
