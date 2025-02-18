@@ -24,7 +24,7 @@ export class CartService {
     const itemIndex = this.cartItems.findIndex(
       (tempCartItem) => tempCartItem.id === cartItem.id
     );
-    if (itemIndex != -1) {
+    if (itemIndex > -1) {
       this.cartItems.splice(itemIndex, 1);
       this.computeCartTotals();
     }
@@ -36,7 +36,7 @@ export class CartService {
     );
 
     if (foundCartItem) {
-      foundCartItem.quantity += theCartItem.quantity;
+      foundCartItem.quantity++;
     } else {
       this.cartItems.push(theCartItem);
     }
