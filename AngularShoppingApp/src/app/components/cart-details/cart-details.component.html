@@ -27,7 +27,10 @@
 
                 <span class="mx-3">{{ tempCartItem.quantity }}</span>
 
-                <button class="btn btn-primary btn-sm">
+                <button
+                  (click)="decrementQuantity(tempCartItem)"
+                  class="btn btn-primary btn-sm"
+                >
                   <i class="fas fa-minus"></i>
                 </button>
               </div>

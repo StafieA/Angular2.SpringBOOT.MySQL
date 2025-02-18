@@ -12,6 +12,24 @@ export class CartService {
   totalQuantity: Subject<number> = new Subject<number>();
   constructor() {}
 
+  decrementQuantity(cartItem: CartItem) {
+    cartItem.quantity--;
+    if (cartItem.quantity === 0) {
+      this.removeItem(cartItem);
+    } else {
+      this.computeCartTotals();
+    }
+  }
+  removeItem(cartItem: CartItem) {
+    const itemIndex = this.cartItems.findIndex(
+      (tempCartItem) => tempCartItem.id === cartItem.id
+    );
+    if (itemIndex != -1) {
+      this.cartItems.splice(itemIndex, 1);
+      this.computeCartTotals();
+    }
+  }
+
   addToCart(theCartItem: CartItem) {
     let foundCartItem = this.cartItems.find(
       (item) => item.id === theCartItem.id

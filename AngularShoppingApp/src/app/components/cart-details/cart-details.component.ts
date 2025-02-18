@@ -43,4 +43,8 @@ export class CartDetailsComponent implements OnInit, OnDestroy {
   incrementQuantity(tempCartItem: CartItem) {
     this.cartServ.addToCart(tempCartItem);
   }
+
+  decrementQuantity(cartItem: CartItem) {
+    this.cartServ.decrementQuantity(cartItem);
+  }
 }
