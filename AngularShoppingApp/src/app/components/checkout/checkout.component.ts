@@ -72,4 +72,22 @@ export class CheckoutComponent implements OnInit {
         ?.setValue(this.checkoutFormGroup.get('shippingAddress')?.value);
     }
   }
+
+  handleMonthsAndYears() {
+    const creditCardFormGroup = this.checkoutFormGroup.get('creditCard');
+
+    const currentYear = new Date().getFullYear();
+    const selectedYear = Number(creditCardFormGroup?.value.expirationYear);
+
+    let startMonth: number;
+
+    if (currentYear === selectedYear) {
+      startMonth = new Date().getMonth() + 1;
+    } else {
+      startMonth = 1;
+    }
+    this.serviceForm.getCrediCartMontths(startMonth).subscribe((data) => {
+      this.creditCardMonths = data;
+    });
+  }
 }
