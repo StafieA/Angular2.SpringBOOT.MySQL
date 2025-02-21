@@ -26,35 +26,45 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
+    @JsonProperty("category")
     private ProductCategory category;
 
+    @JsonProperty("sku")
     @Column(name = "sku")
     private String sku;
+
     @JsonProperty("name")
     @Column(name = "name")
     private String name;
 
     @Column(name = "description")
+    @JsonProperty("description")
     private String description;
 
     @Column(name = "unit_price")
+    @JsonProperty("unitPrice")
     private BigDecimal unitPrice;
 
     @Column(name = "image_url")
+    @JsonProperty("imageUrl")
     private String imageUrl;
 
     @Column(name = "active")
+    @JsonProperty("active")
     private boolean active;
 
     @Column(name = "units_in_stock")
+    @JsonProperty("unitsInStock")
     private int unitsInStock;
 
     @Column(name = "date_created")
     @CreationTimestamp
+    @JsonProperty("dateCreated")
     private Date dateCreated;
 
     @Column(name = "last_updated")
     @UpdateTimestamp
+    @JsonProperty("lastUpdated")
     private Date lastUpdated;
 
 
