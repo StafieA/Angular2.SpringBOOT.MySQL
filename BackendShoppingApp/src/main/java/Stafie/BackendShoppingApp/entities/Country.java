@@ -18,7 +18,7 @@ public class Country {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     @JsonProperty("id")
-    private int id;
+    private Long id;
 
     @Column(name = "code")
     @JsonProperty("code")
@@ -29,5 +29,6 @@ public class Country {
     private String name;
 
     @OneToMany(mappedBy = "country")
+    @JsonProperty
     private Set<State> states;
 }

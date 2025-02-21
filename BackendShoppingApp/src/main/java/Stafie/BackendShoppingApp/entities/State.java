@@ -25,6 +25,6 @@ public class State {
 
     @ManyToOne
     @JoinColumn(name = "country_id")
-    @JsonProperty( "country_id")
+//    @JsonProperty( "country_id")
     private Country country;
 }
