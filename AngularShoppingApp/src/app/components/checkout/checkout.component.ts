@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { FormServiceService } from '../../services/form-service.service';
+import { Country } from '../../common/country';
 
 @Component({
   selector: 'app-checkout',
@@ -14,6 +15,7 @@ export class CheckoutComponent implements OnInit {
 
   creditCardYears: number[] = [];
   creditCardMonths: number[] = [];
+  countries: Country[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -57,6 +59,10 @@ export class CheckoutComponent implements OnInit {
 
     this.serviceForm.getCreditCardYears().subscribe((data) => {
       this.creditCardYears = data;
+    });
+
+    this.serviceForm.getCountries().subscribe((data) => {
+      this.countries = data;
     });
   }
 
